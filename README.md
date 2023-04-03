@@ -1,3 +1,31 @@
+# SisManu
+O Sistema de Manutenção da Moradia Estudantil é uma aplicação que tem como objetivo gerenciar os chamados de manutenção para as casas da moradia estudantil da faculdade. Com ele, os moradores podem reportar problemas em suas casas e os funcionários da faculdade podem rastrear e resolver os chamados.
+
+# Requisitos Funcionais
+- Registro de chamados: os moradores devem poder registrar seus chamados no sistema. O sistema deve coletar informações como o tipo de problema, a localização da casa, e outras informações relevantes.
+
+- Rastreamento de chamados: o sistema deve permitir que os funcionários da faculdade possam visualizar os chamados registrados e seu status (por exemplo, aberto, em andamento ou concluído).
+
+- Gerenciamento de estoque: o sistema deve ser capaz de controlar o estoque de peças e suprimentos necessários para realizar os reparos. Deve ser possível registrar o recebimento de novos itens, bem como as baixas de estoque.
+
+- Histórico de manutenção: o sistema deve manter um histórico dos reparos realizados em cada casa. Isso pode incluir informações como a data do reparo, o tipo de reparo, quais itens foram usados e quem realizou o trabalho.
+
+- Notificação para o morador: o sistema deve notificar o morador quando o problema reportado for resolvido. As notificações podem ser enviadas por meio de e-mail, mensagem de texto ou notificação no próprio sistema.
+
+Requisitos Não-Funcionais
+- Segurança: o sistema deve garantir a privacidade dos dados dos usuários e proteger contra acesso não autorizado.
+
+- Usabilidade: o sistema deve ser fácil de usar, com uma interface intuitiva e instruções claras.
+
+- Performance: o sistema deve ser rápido e responsivo, com tempos de resposta baixos mesmo em momentos de pico de uso.
+
+Tecnologias Utilizadas
+O Sistema de Manutenção da Moradia Estudantil foi desenvolvido utilizando as seguintes tecnologias:
+
+  Linguagem de programação: React com Typescript
+  Banco de dados: 
+  Framework: Next JS
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
