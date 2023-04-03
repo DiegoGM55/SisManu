@@ -1,0 +1,10 @@
+.navbar{
+    background-color: #2196f3;
+    display: flex;
+    box-shadow:  5px 5px 10px #a6a6a6;
+}
+
+.logo{
+    margin: 15px 0px 15px 40px;
+    
+}
