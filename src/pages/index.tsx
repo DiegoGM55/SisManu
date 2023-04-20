@@ -1,4 +1,8 @@
 import styles from '../styles/Login.module.css';
+import Input from '../components/forms/Input';
+import Button from '../components/forms/Button';
+import Link from 'next/link';
+import { FaUser, FaLock } from 'react-icons/fa';
 
 export default function Home() {
   return (
@@ -6,16 +10,27 @@ export default function Home() {
       <div className={styles.loginBoxContent}>
         <h2>Faça o login para continuar</h2>
         <form className={styles.form}>
-          <div className={styles.input_container}>
-            <input
-              placeholder="Enter text"
-              className={styles.inputField}
-              type="text"
-            />
-            <label className={styles.inputLabel}>Enter text</label>
-            <span className={styles.inputHighlight}></span>
+          <div className={styles.group}>
+            <FaUser className={styles.icon} />
+            <Input type="text" label="Nome de usuário" name="name" />
+          </div>
+          <div className={styles.group}>
+            <FaLock className={styles.icon} />
+            <Input type="password" label="Senha" name="password" />
+          </div>
+          <div>
+            <Button type="submit" name="button" />
           </div>
         </form>
+        <div>
+          <Link className={styles.link} href="/">
+            Primeiro acesso?
+          </Link>
+
+          <Link className={styles.link} href="/">
+            Esqueceu sua senha?
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -1,33 +1,18 @@
-import styles from './Input.module.css';
+import styles from '../../styles/components/forms/Input.module.css';
 
-interface InputProps {
+interface Props {
   type: string;
-  text: string;
+  label: string;
   name: string;
-  placeholder: string;
-  handleOnChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  value: string;
 }
 
-function Input({
-  type,
-  text,
-  name,
-  placeholder,
-  handleOnChange,
-  value
-}: InputProps) {
+function Input({ type, label, name }: Props) {
   return (
-    <div className={styles.form_control}>
-      <label htmlFor={name}>{text}:</label>
-      <input
-        type={type}
-        name={name}
-        id={name}
-        placeholder={placeholder}
-        onChange={handleOnChange}
-        value={value}
-      />
+    <div className={styles.group}>
+      <input required={true} type={type} className={styles.input} name={name} />
+      <span className={styles.highlight}></span>
+      <span className={styles.bar}></span>
+      <label className={styles.labelInput}>{label}</label>
     </div>
   );
 }
