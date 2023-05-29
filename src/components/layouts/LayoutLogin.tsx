@@ -4,7 +4,9 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <Navbar />
-      <main>{children}</main>
+      <div>
+        <main>{children}</main>
+      </div>
     </>
   );
 };
