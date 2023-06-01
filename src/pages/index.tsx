@@ -6,8 +6,8 @@ import { FaUser, FaLock } from 'react-icons/fa';
 
 export default function Home() {
   return (
-    <div className={`${styles.container}`}>
-      <div className={styles.loginBoxContent}>
+    <div className={`${styles.container} m-5`}>
+      <div className={`${styles.loginBoxContent} w-full xl:w-[500px]`}>
         <h2>Faça o login para continuar</h2>
         <form className={styles.form}>
           <div className={styles.group}>
