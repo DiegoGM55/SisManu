@@ -1,4 +1,4 @@
-import BlockList from '@/components/reportsList/blockList';
+import BlockList from '@/components/reportsList/BlockList';
 import { useAuth } from '@/context/auth-context';
 
 export default function ReportsList() {

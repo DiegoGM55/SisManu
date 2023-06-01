@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { FaArrowDown } from 'react-icons/fa';
+import ItemList from './ItemList';
 
 interface BlockListProps {
   block: string;
@@ -11,7 +12,7 @@ export default function BlockList({ block }: BlockListProps) {
   return (
     <div className="m-5">
       <div
-        className="bg-[#2196f3] text-xl text-white font-bold p-3 border border-zinc-200 rounded flex justify-between cursor-pointer"
+        className="bg-zinc-100 text-xl font-medium p-3 border border-zinc-200 rounded flex justify-between cursor-pointer"
         onClick={() => setBlockListSwitch(!blockListSwitch)}
       >
         <h1 className="uppercase">{block}</h1>
@@ -24,11 +25,11 @@ export default function BlockList({ block }: BlockListProps) {
         </span>
       </div>
       {blockListSwitch && (
-        <ul className="mt-2 ml-5">
-          <li>Casa 1</li>
-          <li>Casa 2</li>
-          <li>Casa 3</li>
-          <li>Casa 4</li>
+        <ul className="text-lg">
+          <ItemList house="Casa 1" />
+          <ItemList house="Casa 2" />
+          <ItemList house="Casa 3" />
+          <ItemList house="Casa 4" />
         </ul>
       )}
     </div>
