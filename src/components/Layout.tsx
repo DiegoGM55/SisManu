@@ -16,7 +16,7 @@ export const Layout = (props: LayoutProps) => {
         {isAuthenticated ? (
           <>
             <Menu />
-            <div className="w-11/12">
+            <div className="w-full">
               <main>{props.children}</main>
             </div>
           </>

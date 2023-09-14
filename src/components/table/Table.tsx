@@ -1,6 +1,6 @@
 import CellTable from './CellTable';
 
-export default function Table() {
+const Table = () => {
   return (
     <table className="table">
       <thead>
@@ -72,4 +72,6 @@ export default function Table() {
       </tbody>
     </table>
   );
-}
+};
+
+export default Table;

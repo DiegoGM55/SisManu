@@ -1,7 +1,7 @@
 import Card from '@/components/issueReport/Card';
 import { useAuth } from '@/context/auth-context';
 
-export default function IssueReport() {
+const IssueReport = () => {
   const { login } = useAuth();
 
   login();
@@ -109,4 +109,6 @@ export default function IssueReport() {
       </div>
     </div>
   );
-}
+};
+
+export default IssueReport;

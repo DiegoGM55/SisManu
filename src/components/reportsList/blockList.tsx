@@ -6,7 +6,7 @@ interface BlockListProps {
   block: string;
 }
 
-export default function BlockList({ block }: BlockListProps) {
+const BlockList = ({ block }: BlockListProps) => {
   const [blockListSwitch, setBlockListSwitch] = useState<boolean>(false);
 
   return (
@@ -34,4 +34,6 @@ export default function BlockList({ block }: BlockListProps) {
       )}
     </div>
   );
-}
+};
+
+export default BlockList;

@@ -6,7 +6,7 @@ interface Props {
   name: string;
 }
 
-function Input({ type, label, name }: Props) {
+const Input = ({ type, label, name }: Props) => {
   return (
     <div className={styles.group}>
       <input required={true} type={type} className={styles.input} name={name} />
@@ -15,6 +15,6 @@ function Input({ type, label, name }: Props) {
       <label className={styles.labelInput}>{label}</label>
     </div>
   );
-}
+};
 
 export default Input;

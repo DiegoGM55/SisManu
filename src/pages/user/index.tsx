@@ -1,6 +1,6 @@
 import { useAuth } from '../../context/auth-context';
 
-export default function Home() {
+const Home = () => {
   const { login } = useAuth();
 
   login();
@@ -18,4 +18,6 @@ export default function Home() {
       </div>
     </div>
   );
-}
+};
+
+export default Home;

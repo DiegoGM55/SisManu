@@ -1,7 +1,7 @@
 import styles from '../../styles/components/layout/Navbar.module.css';
 import Image from 'next/image';
 
-export default function Navbar() {
+const Navbar = () => {
   return (
     <div className={`${styles.navbar} flex gap-14`}>
       <Image
@@ -20,4 +20,6 @@ export default function Navbar() {
       </div>
     </div>
   );
-}
+};
+
+export default Navbar;

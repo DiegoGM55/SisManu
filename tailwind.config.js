@@ -1,9 +1,16 @@
 /** @type {import('tailwindcss').Config} */
+// eslint-disable-next-line no-undef
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}'
+  ],
+  safelist: [
+    {
+      pattern: /^grid-cols-/,
+      variants: ['sm', 'md', 'lg', 'xl', '2xl']
+    }
   ],
   theme: {
     extend: {
@@ -13,7 +20,7 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
       },
       colors: {
-        'blue': '#2196f3'
+        blue: '#2196f3'
       }
     }
   },

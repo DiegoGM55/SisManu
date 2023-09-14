@@ -8,7 +8,7 @@ interface CellTableProps {
   photo: string;
 }
 
-export default function CellTable(props: CellTableProps) {
+const CellTable = (props: CellTableProps) => {
   return (
     <tr>
       <td>{props.block}</td>
@@ -20,4 +20,6 @@ export default function CellTable(props: CellTableProps) {
       <td>{props.date}</td>
     </tr>
   );
-}
+};
+
+export default CellTable;

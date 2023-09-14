@@ -1,7 +1,7 @@
 .group{
-   width: 80%;
    position: relative;
    margin-bottom: 40px;
+   width: 100%;
 }
  .input {
   font-size: 16px;

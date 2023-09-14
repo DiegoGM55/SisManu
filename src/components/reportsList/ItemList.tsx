@@ -6,11 +6,11 @@ interface ItemListProps {
   house: string;
 }
 
-export default function ItemList({ house }: ItemListProps) {
+const ItemList = ({ house }: ItemListProps) => {
   const [itemListSwitch, setItemListSwitch] = useState<boolean>(false);
 
   return (
-    <li className="flex gap-5 border border-zinc-200">
+    <li className="flex flex-col border border-zinc-200 p-5">
       <div
         className="flex gap-5 cursor-pointer"
         onClick={() => setItemListSwitch(!itemListSwitch)}
@@ -23,10 +23,12 @@ export default function ItemList({ house }: ItemListProps) {
         )}
       </div>
       {itemListSwitch && (
-        <div className="w-[60%] flex m-auto transform ease-linear duration-300">
+        <div className="flex m-auto transform ease-linear duration-300">
           <Table />
         </div>
       )}
     </li>
   );
-}
+};
+
+export default ItemList;

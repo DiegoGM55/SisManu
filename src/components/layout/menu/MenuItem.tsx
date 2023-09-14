@@ -5,11 +5,13 @@ interface Props {
   adress: string;
 }
 
-export default function MenuItem(props: Props) {
+const MenuItem = (props: Props) => {
   console.log(props.adress);
   return (
     <Link className="menuItem" href={props.adress}>
       {props.name}
     </Link>
   );
-}
+};
+
+export default MenuItem;

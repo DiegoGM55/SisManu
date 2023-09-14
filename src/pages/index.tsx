@@ -3,13 +3,32 @@ import Input from '../components/forms/Input';
 import Button from '../components/forms/Button';
 import Link from 'next/link';
 import { FaUser, FaLock } from 'react-icons/fa';
+import { useState } from 'react';
 
-export default function Home() {
+const Home = () => {
+  const [data, setData] = useState({
+    email: '',
+    password: ''
+  });
+
+  const InputValue = (e) => {
+    setData({ ...data, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(data);
+  };
   return (
     <div className={`${styles.container} m-5`}>
       <div className={`${styles.loginBoxContent} w-full xl:w-[500px]`}>
         <h2>Faça o login para continuar</h2>
-        <form className={styles.form}>
+        <form
+          action=""
+          method="post"
+          autoComplete="off"
+          className={styles.form}
+        >
           <div className={styles.group}>
             <FaUser className={styles.icon} />
             <Input type="text" label="Nome de usuário" name="name" />
@@ -19,7 +38,7 @@ export default function Home() {
             <Input type="password" label="Senha" name="password" />
           </div>
           <div>
-            <Button type="submit" name="button" />
+            <Button type="submit" name="realizarLogin" />
           </div>
         </form>
         <div>
@@ -34,4 +53,6 @@ export default function Home() {
       </div>
     </div>
   );
-}
+};
+
+export default Home;
