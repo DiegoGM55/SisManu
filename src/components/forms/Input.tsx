@@ -4,12 +4,19 @@ interface Props {
   type: string;
   label: string;
   name: string;
+  InputValue: any;
 }
 
-const Input = ({ type, label, name }: Props) => {
+const Input = ({ type, label, name, InputValue }: Props) => {
   return (
     <div className={styles.group}>
-      <input required={true} type={type} className={styles.input} name={name} />
+      <input
+        required={true}
+        type={type}
+        className={styles.input}
+        name={name}
+        onChange={InputValue}
+      />
       <span className={styles.highlight}></span>
       <span className={styles.bar}></span>
       <label className={styles.labelInput}>{label}</label>

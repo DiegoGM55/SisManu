@@ -1,10 +1,4 @@
-import { useAuth } from '../../context/auth-context';
-
 const Home = () => {
-  const { login } = useAuth();
-
-  login();
-
   return (
     <div className="mt-5">
       <div className="w-auto border-b-2 border-b-blue border-dotted">
