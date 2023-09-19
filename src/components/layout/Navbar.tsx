@@ -13,7 +13,7 @@ const Navbar = () => {
         quality={5}
       />
       <div className="font-bold mt-4 mb-2 w-90">
-        <h1 className="text-white text-sm">Sistemas de manutenção</h1>
+        <h1 className="text-white text-sm">Sistema de manutenção</h1>
         <p className="text-zinc-200 text-xs">
           Faculdade de ciências e tecnologia - Câmpus de Presidente Prudente
         </p>

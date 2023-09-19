@@ -6,7 +6,6 @@ interface Props {
 }
 
 const MenuItem = (props: Props) => {
-  console.log(props.adress);
   return (
     <Link className="menuItem" href={props.adress}>
       {props.name}

@@ -15,9 +15,11 @@ const Home = () => {
     password: ''
   });
 
-  const InputValue = (e) => {
-    setData({ ...data, [e.target.name]: e.target.value });
-  };
+  const InputValue = (e) =>
+    setData({
+      ...data,
+      [e.target.name]: e.target.value
+    });
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
@@ -27,10 +29,13 @@ const Home = () => {
       callbackUrl: '/'
     });
 
+    console.log(result);
+
     if (result?.url) {
       return push(result?.url);
     }
   };
+
   return (
     <div className={`${styles.container} m-5`}>
       <div className={`${styles.loginBoxContent} w-full xl:w-[500px]`}>
@@ -38,7 +43,6 @@ const Home = () => {
         <form
           action=""
           method="post"
-          autoComplete="off"
           className={styles.form}
           onSubmit={handleSubmit}
         >
@@ -65,7 +69,7 @@ const Home = () => {
           </div>
         </form>
         <div>
-          <Link className={styles.link} href="/">
+          <Link className={styles.link} href="/register">
             Primeiro acesso?
           </Link>
 
@@ -82,11 +86,11 @@ export default Home;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const session = await getSession(context);
-
+  console.log(session);
   if (session) {
     return {
       redirect: {
-        destination: '/user/',
+        destination: '/user/home',
         permanent: false
       }
     };

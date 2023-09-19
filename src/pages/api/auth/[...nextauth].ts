@@ -5,23 +5,25 @@ type ICredentials = {
   email: string;
   password: string;
 };
-
 export const authOptions = {
   pages: {
-    signIn: '/index'
+    signIn: '/'
   },
   providers: [
     CredentialsProvider({
       name: 'Credentials',
-      credentials: {},
+      credentials: {
+        email: { label: 'Email', type: 'email', placeholder: 'jsmith' },
+        password: { label: 'Password', type: 'password' }
+      },
 
       async authorize({ email, password }: ICredentials) {
-        const res = await fetch('http://localhost:8000/user/session', {
+        const response = await fetch('http://localhost:8000/user/session', {
           method: 'POST',
           body: new URLSearchParams({ email, password })
         });
 
-        const data = await res.json();
+        const data = await response.json();
 
         if (data) {
           return { ...data, jwt: data.jwt };
@@ -31,7 +33,7 @@ export const authOptions = {
       }
     })
   ],
-  secret: process.env.SECRET
+  secret: process.env.NEXTAUTH_SECRET
 };
 
 export default NextAuth(authOptions);

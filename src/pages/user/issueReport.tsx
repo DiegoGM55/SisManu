@@ -1,11 +1,6 @@
 import Card from '@/components/issueReport/Card';
-import { useAuth } from '@/context/auth-context';
 
 const IssueReport = () => {
-  const { login } = useAuth();
-
-  login();
-
   return (
     <div>
       <div className="w-auto border-b-2 border-b-blue border-dotted mt-5">

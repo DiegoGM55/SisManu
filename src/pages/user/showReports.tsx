@@ -1,10 +1,6 @@
 import Table from '@/components/table/Table';
-import { useAuth } from '@/context/auth-context';
 
 export default function ShowReports() {
-  const { login } = useAuth();
-
-  login();
   return (
     <div className="min-w-[300px]">
       <div className="w-auto border-b-2 border-b-blue border-dotted mt-5">

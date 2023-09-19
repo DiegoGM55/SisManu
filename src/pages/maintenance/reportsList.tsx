@@ -1,9 +1,6 @@
 import BlockList from '@/components/reportsList/BlockList';
-import { useAuth } from '@/context/auth-context';
 
 const ReportsList = () => {
-  const { login } = useAuth();
-  login();
   return (
     <div className="min-w-[300px]">
       <div className="w-auto border-b-2 border-b-blue border-dotted mt-5">
