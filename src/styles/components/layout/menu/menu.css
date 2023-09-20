@@ -1,9 +1,10 @@
 .menuItem{
     @apply p-2 pl-4
-      text-zinc-500 text-sm
-      border-b-2 border-b-zinc-200 bg-zinc-50
-      hover:bg-zinc-100 hover:text-zinc-500
-      motion-safe:hover:scale-105
-      hover:cursor-pointer
-      active:bg-zinc-200 active:text-zinc-500;
+    text-zinc-500 text-sm
+    border-b-2 border-b-zinc-200 bg-zinc-50
+    hover:bg-zinc-100 hover:text-zinc-500
+    motion-safe:hover:scale-105
+    hover:cursor-pointer
+    active:bg-zinc-200 active:text-zinc-500
+    flex justify-start;
 }

@@ -1,4 +1,5 @@
 import NextAuth from 'next-auth';
+import GoogleProvider from 'next-auth/providers/google';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
 type ICredentials = {
@@ -10,6 +11,10 @@ export const authOptions = {
     signIn: '/'
   },
   providers: [
+    GoogleProvider({
+      clientId: process.env.GOOGLE_ID,
+      clientSecret: process.env.GOOGLE_SECRET
+    }),
     CredentialsProvider({
       name: 'Credentials',
       credentials: {

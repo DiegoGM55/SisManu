@@ -1,8 +1,7 @@
 import { useSession } from 'next-auth/react';
 
 const Home = () => {
-  const { data: session, status } = useSession();
-  console.log(session);
+  const { data: session } = useSession();
 
   return (
     <div className="mt-5">
@@ -10,7 +9,7 @@ const Home = () => {
         <h1 className="text-blue font-bold">Sismanu - Sistema de manutenção</h1>
       </div>
       <div className="mt-7 text-center">
-        <p className="font-bold">Seja Bem-vindo</p>
+        <p className="font-bold">Seja Bem-vindo {session?.user.name}</p>
         <p className="mt-5 text-sm">
           Você está conectado ao módulo de manutenção
         </p>

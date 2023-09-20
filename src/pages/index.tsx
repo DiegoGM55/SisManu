@@ -29,8 +29,6 @@ const Home = () => {
       callbackUrl: '/'
     });
 
-    console.log(result);
-
     if (result?.url) {
       return push(result?.url);
     }
@@ -68,7 +66,7 @@ const Home = () => {
             <Button type="submit" name="realizarLogin" />
           </div>
         </form>
-        <div>
+        <div className="flex flex-col justify-center">
           <Link className={styles.link} href="/register">
             Primeiro acesso?
           </Link>
@@ -76,6 +74,13 @@ const Home = () => {
           <Link className={styles.link} href="/">
             Esqueceu sua senha?
           </Link>
+          <button
+            onClick={() => signIn('google')}
+            type="button"
+            className={styles.link}
+          >
+            Faça login com o Google
+          </button>
         </div>
       </div>
     </div>
