@@ -4,7 +4,7 @@ import Button from '../components/forms/Button';
 import Link from 'next/link';
 import { GetServerSideProps } from 'next';
 import { getSession, signIn } from 'next-auth/react';
-import { FaUser, FaLock } from 'react-icons/fa';
+import { FaUser, FaLock, FaGoogle } from 'react-icons/fa';
 import { FormEventHandler, useState } from 'react';
 import { useRouter } from 'next/router';
 
@@ -37,49 +37,21 @@ const Home = () => {
   return (
     <div className={`${styles.container} m-5`}>
       <div className={`${styles.loginBoxContent} w-full xl:w-[500px]`}>
-        <h2>Faça o login para continuar</h2>
-        <form
-          action=""
-          method="post"
-          className={styles.form}
-          onSubmit={handleSubmit}
-        >
-          <div className={styles.group}>
-            <FaUser className={styles.icon} />
-            <Input
-              type="text"
-              label="Nome de usuário"
-              name="email"
-              InputValue={InputValue}
-            />
-          </div>
-          <div className={styles.group}>
-            <FaLock className={styles.icon} />
-            <Input
-              type="password"
-              label="Senha"
-              name="password"
-              InputValue={InputValue}
-            />
-          </div>
-          <div>
-            <Button type="submit" name="realizarLogin" />
-          </div>
-        </form>
-        <div className="flex flex-col justify-center">
-          <Link className={styles.link} href="/register">
-            Primeiro acesso?
-          </Link>
+        <div className={`${styles.title}`}>
+          <h2>
+            Este é o SisManu - Sistema de manutenção da FCT Prudente. Faça login
+            com seu email constitucional para continuar
+          </h2>
+        </div>
 
-          <Link className={styles.link} href="/">
-            Esqueceu sua senha?
-          </Link>
+        <div className="flex flex-col justify-center mt-3">
           <button
             onClick={() => signIn('google')}
             type="button"
             className={styles.link}
           >
-            Faça login com o Google
+            <FaGoogle className="" size={20} />
+            <span>Faça login com o Google</span>
           </button>
         </div>
       </div>
@@ -91,7 +63,6 @@ export default Home;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const session = await getSession(context);
-  console.log(session);
   if (session) {
     return {
       redirect: {

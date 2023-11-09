@@ -15,7 +15,20 @@ const CellTable = (props: CellTableProps) => {
       <td>{props.house}</td>
       <td>{props.room}</td>
       <td>{props.description}</td>
-      <td>{props.photo}</td>
+      <td>
+        {props.photo === '' ? (
+          <p>Sem foto</p>
+        ) : (
+          <a
+            href={props.photo}
+            target="_blank"
+            rel="noreferrer"
+            className="underline text-blue"
+          >
+            Ver foto
+          </a>
+        )}
+      </td>
       <td>{props.status}</td>
       <td>{props.date}</td>
     </tr>

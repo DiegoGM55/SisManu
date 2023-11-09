@@ -1,8 +1,24 @@
 import CellTable from './CellTable';
 
-const Table = () => {
+interface TableProps {
+  content: ReportProps[];
+}
+
+interface ReportProps {
+  id: string;
+  block: string;
+  house: string;
+  room: string;
+  description: string;
+  category: string;
+  image: string;
+  status: string;
+  createdAt: string;
+}
+
+const Table = ({ content }: TableProps) => {
   return (
-    <table className="table">
+    <table className="table w-[100%]">
       <thead>
         <tr>
           <th>Bloco</th>
@@ -15,60 +31,18 @@ const Table = () => {
         </tr>
       </thead>
       <tbody>
-        <CellTable
-          block="A"
-          house="1"
-          room="Sala"
-          description="A porta está quebrada"
-          photo="foto"
-          status="Pendente"
-          date="12/12/2021"
-        />
-        <CellTable
-          block="A"
-          house="1"
-          room="Sala"
-          description="A porta está quebrada"
-          photo="foto"
-          status="Pendente"
-          date="12/12/2021"
-        />
-        <CellTable
-          block="A"
-          house="1"
-          room="Sala"
-          description="A porta está quebrada"
-          photo="foto"
-          status="Pendente"
-          date="12/12/2021"
-        />
-        <CellTable
-          block="A"
-          house="1"
-          room="Sala"
-          description="A porta está quebrada"
-          photo="foto"
-          status="Pendente"
-          date="12/12/2021"
-        />
-        <CellTable
-          block="A"
-          house="1"
-          room="Quarto 2"
-          description="A cama está quebrada"
-          photo="foto"
-          status="Pendente"
-          date="12/12/2021"
-        />
-        <CellTable
-          block="A"
-          house="1"
-          room="Quarto 2"
-          description="A cama está quebrada"
-          photo="foto"
-          status="Pendente"
-          date="12/12/2021"
-        />
+        {content.map((report) => (
+          <CellTable
+            key={report.id}
+            block={report.block}
+            house={report.house}
+            room={report.room}
+            description={report.description}
+            photo={report.image}
+            status={report.status}
+            date={report.createdAt}
+          />
+        ))}
       </tbody>
     </table>
   );
