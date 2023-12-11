@@ -1,39 +1,9 @@
 import styles from '../styles/Login.module.css';
-import Input from '../components/forms/Input';
-import Button from '../components/forms/Button';
-import Link from 'next/link';
 import { GetServerSideProps } from 'next';
 import { getSession, signIn } from 'next-auth/react';
-import { FaUser, FaLock, FaGoogle } from 'react-icons/fa';
-import { FormEventHandler, useState } from 'react';
-import { useRouter } from 'next/router';
+import { FaGoogle } from 'react-icons/fa';
 
 const Home = () => {
-  const { push } = useRouter();
-  const [data, setData] = useState({
-    email: '',
-    password: ''
-  });
-
-  const InputValue = (e) =>
-    setData({
-      ...data,
-      [e.target.name]: e.target.value
-    });
-
-  const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
-    e.preventDefault();
-    const result = await signIn('credentials', {
-      ...data,
-      redirect: false,
-      callbackUrl: '/'
-    });
-
-    if (result?.url) {
-      return push(result?.url);
-    }
-  };
-
   return (
     <div className={`${styles.container} m-5`}>
       <div className={`${styles.loginBoxContent} w-full xl:w-[500px]`}>

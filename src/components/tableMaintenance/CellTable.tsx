@@ -1,28 +1,37 @@
-import Modal from '../modal/Modal';
+import { useRouter } from 'next/router';
 
 interface CellTableProps {
+  id: string;
   block: string;
   house: string;
   room: string;
   description: string;
-  date: string;
+  category: string;
+  image: string;
   status: string;
-  photo: string;
+  createdAt: string;
 }
 
 const CellTable = (props: CellTableProps) => {
+  const router = useRouter();
+
+  function navegateToPageProblem() {
+    router.push(`/maintenance/reports/${props.id}`);
+  }
+
   return (
-    <tr>
+    <tr onClick={navegateToPageProblem}>
       <td>{props.block}</td>
       <td>{props.house}</td>
       <td>{props.room}</td>
       <td>{props.description}</td>
+      <td>{props.category}</td>
       <td>
-        {props.photo === '' ? (
+        {props.image === '' ? (
           <p>Sem foto</p>
         ) : (
           <a
-            href={props.photo}
+            href={props.image}
             target="_blank"
             rel="noreferrer"
             className="underline text-blue"
@@ -32,7 +41,7 @@ const CellTable = (props: CellTableProps) => {
         )}
       </td>
       <td>{props.status}</td>
-      <td>{props.date}</td>
+      <td>{props.createdAt}</td>
     </tr>
   );
 };

@@ -49,7 +49,6 @@ const IssueReport = ({ user }: IssueReportProps) => {
   const uploadImage = async (file: File) => {
     const storageRef = ref(storage, `images/${file.name}`);
     const uploadTask = uploadBytesResumable(storageRef, file);
-    console.log('uploadImage');
 
     // Espera o upload da imagem ser concluído
     uploadTask.on(
@@ -89,7 +88,6 @@ const IssueReport = ({ user }: IssueReportProps) => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('handleSubmit');
     try {
       // adicionar a imagem no storage
       const file = e.target[5]?.files[0];

@@ -26,7 +26,6 @@ const Register = () => {
     } else {
       delete data.passwordConfirm;
     }
-    console.log(data);
     // Faz uma requisição POST para a rota localhost/8000/user/createUser, passando o formData como o corpo
     fetch('http://localhost:8000/user/createUser', {
       headers: {
@@ -47,7 +46,6 @@ const Register = () => {
       })
       .then((data) => {
         // Faz algo com os dados da resposta, por exemplo, mostrar uma mensagem de sucesso
-        console.log(data);
         if (data.status === 'Error') {
           alert(data.message);
           return;
