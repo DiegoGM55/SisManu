@@ -30,7 +30,7 @@ const ReportsList = (allReports: ReportsListProps) => {
         <h1 className="text-blue font-bold">Lista de reparos a fazer</h1>
       </div>
       <div>
-        <BlockList reports={allReports.reportsBlockA} block="A"></BlockList>
+        <BlockList reports={allReports.reportsBlockA} block="A" />
         <BlockList reports={allReports.reportsBlockB} block="B" />
         <BlockList reports={allReports.reportsBlockC} block="C" />
         <BlockList reports={allReports.reportsBlockD} block="D" />

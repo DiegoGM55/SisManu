@@ -1,8 +1,6 @@
 import { db } from '@/services/firebaseConnection';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { getSession } from 'next-auth/react';
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
 interface ReportProps {

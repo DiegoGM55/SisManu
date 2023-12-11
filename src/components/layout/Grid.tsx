@@ -1,6 +1,6 @@
 interface GridProps {
   cols?: number;
-  children: any;
+  children: React.ReactNode;
 }
 
 const Grid = (props: GridProps) => {

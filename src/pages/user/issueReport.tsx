@@ -1,10 +1,7 @@
-import Card from '@/components/issueReport/Card';
 import Message from '@/components/message/Message';
 import { db, storage } from '@/services/firebaseConnection';
-import { create } from 'domain';
 import { addDoc, collection } from 'firebase/firestore';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
-import { url } from 'inspector';
 import { GetServerSideProps } from 'next';
 import { getSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
@@ -12,17 +9,6 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 
 interface IssueReportProps {
   user: { email: string };
-}
-
-interface ReportProps {
-  block: string;
-  house: string;
-  room: string;
-  description: string;
-  category: string;
-  image: string;
-  status: string;
-  createdAt: string;
 }
 
 const IssueReport = ({ user }: IssueReportProps) => {
