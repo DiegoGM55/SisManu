@@ -1,4 +1,4 @@
-import BlockList from '../../components/reportsList/BlockList';
+import BlockList from '@/components/reportsList/BlockList';
 import { db } from '@/services/firebaseConnection';
 import { collection, getDocs, orderBy, query } from 'firebase/firestore';
 import { GetServerSideProps } from 'next';
