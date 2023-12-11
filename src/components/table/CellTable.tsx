@@ -1,5 +1,3 @@
-import Modal from '../modal/Modal';
-
 interface CellTableProps {
   block: string;
   house: string;
